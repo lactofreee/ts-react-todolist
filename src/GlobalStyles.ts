@@ -16,7 +16,6 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         border: 0;
-        font-size: 10px;
         vertical-align: baseline;
     }
     body{

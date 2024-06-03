@@ -1,6 +1,6 @@
 import "./App.css";
 import GlobalStyles from "./GlobalStyles";
-import TodoList from "./TodoList";
+import TodoList from "./components/ToDoList";
 
 function App() {
   return (
