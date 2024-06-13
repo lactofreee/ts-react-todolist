@@ -2,7 +2,7 @@ import styled from "styled-components";
 import CreateToDoForm from "./CreateToDoForm";
 import ToDo from "./ToDo";
 import { useRecoilValue } from "recoil";
-import { toDoState } from "../RecoilAtom/Atom";
+import { toDoSelector, toDoState } from "../RecoilAtom/Atom";
 
 const Container = styled.div`
   height: 100vh;
@@ -30,15 +30,17 @@ const ToDoCard = styled.ul`
 
 const ToDoList = () => {
   const toDos = useRecoilValue(toDoState);
+  const selector = useRecoilValue(toDoSelector);
+  console.log(selector);
   return (
     <Container>
       <Title>To Dos</Title>
       <CreateToDoForm />
       <ToDoCard>
-      {toDos.map((toDo) => (
-        <ToDo key={toDo.id} {...toDo}></ToDo> //text={toDo.text} category={toDo.category} id={toDo.id} 축약해서 표현==> {...toDo}
-      ))}
-    </ToDoCard>
+        {toDos.map((toDo) => (
+          <ToDo key={toDo.id} {...toDo}></ToDo> //text={toDo.text} category={toDo.category} id={toDo.id} 축약해서 표현==> {...toDo}
+        ))}
+      </ToDoCard>
     </Container>
   );
 };
